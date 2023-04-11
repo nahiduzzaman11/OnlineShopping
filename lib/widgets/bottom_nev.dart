@@ -1,4 +1,6 @@
+import 'package:crud_application/screens/profile_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class BottomNevigation extends StatefulWidget {
   const BottomNevigation({
@@ -37,10 +39,15 @@ class _BottomNevigationState extends State<BottomNevigation> {
             size: 24,
             color: Colors.white,
           ),
-          Icon(
-            Icons.person_outline_rounded,
-            size: 24,
-            color: Colors.white,
+          InkWell(
+            onTap: (){
+              Get.to(ProfilePage());
+            },
+            child: Icon(
+              Icons.person_outline_rounded,
+              size: 24,
+              color: Colors.white,
+            ),
           ),
           Icon(
             Icons.login_outlined,

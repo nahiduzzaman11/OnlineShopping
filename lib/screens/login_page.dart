@@ -4,10 +4,23 @@ import 'package:crud_application/widgets/home_first_section.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LogInPage extends StatelessWidget {
+class LogInPage extends StatefulWidget {
    LogInPage({Key? key}) : super(key: key);
 
+  @override
+  State<LogInPage> createState() => _LogInPageState();
+}
+
+class _LogInPageState extends State<LogInPage> {
    MyController myController = Get.put(MyController());
+
+  /* @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    myController.createBox();
+    myController.getdata();
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +78,6 @@ class LogInPage extends StatelessWidget {
                         elevation: 5,
                         color: Colors.grey[600],
                         child: TextField(
-
                           obscureText: true,
                           controller: myController.passController,
                           decoration: InputDecoration(
@@ -80,12 +92,23 @@ class LogInPage extends StatelessWidget {
                         ),
                       ),
                     ),
+                    SizedBox(height: height * 0.01,),
+                    Row(children: [
+                      Text("Remember Me",style: TextStyle(color: Colors.black,fontSize: 12),),
+                      Checkbox(value: myController.isChecked, onChanged: (value) {
+                        myController.isChecked = !myController.isChecked;
+                        setState(() {
+
+                        });
+                      },),
+                    ],),
                     SizedBox(
                       height: height * 0.02,
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        Get.to(HomePage());
+                        myController.login();
+                        Get.off(HomePage());
                       },
                       style: ElevatedButton.styleFrom(
                         elevation: 5,
@@ -106,6 +129,7 @@ class LogInPage extends StatelessWidget {
                     SizedBox(height: height * 0.01,),
                     TextButton(
                       onPressed: () {
+
                       },
                       child: const Text(
                         "Registration Now?",

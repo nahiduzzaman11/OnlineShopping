@@ -25,20 +25,13 @@ class SelectedProduct extends StatelessWidget {
           title: const Text("Product Details",style: TextStyle(color: Colors.black,fontSize: 20),),
           leading: InkWell(
             onTap: (){
+              controller.removeSelectedProduct(0);
+              Get.offAll(HomePage());
             },
-            child: Container(
-
-              child: InkWell(
-                onTap: (){
-                  controller.removeSelectedProduct(0);
-                  Get.offAll(HomePage());
-                },
-                child: Icon(
-                  Icons.arrow_back_ios_outlined,
-                  size: 20,
-                  color: Colors.black,
-                ),
-              ),
+            child: Icon(
+              Icons.arrow_back_ios_outlined,
+              size: 20,
+              color: Colors.black,
             ),
           ),
           actions: [
