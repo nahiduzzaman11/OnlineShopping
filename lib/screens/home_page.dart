@@ -2,10 +2,15 @@ import 'package:crud_application/widgets/bottom_nev.dart';
 import 'package:crud_application/widgets/home_all_product.dart';
 import 'package:crud_application/widgets/home_first_section.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {

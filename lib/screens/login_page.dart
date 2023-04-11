@@ -85,7 +85,7 @@ class LogInPage extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        Get.to(HomePage());
+                        Get.off(HomePage());
                       },
                       style: ElevatedButton.styleFrom(
                         elevation: 5,
@@ -106,6 +106,7 @@ class LogInPage extends StatelessWidget {
                     SizedBox(height: height * 0.01,),
                     TextButton(
                       onPressed: () {
+
                       },
                       child: const Text(
                         "Registration Now?",
