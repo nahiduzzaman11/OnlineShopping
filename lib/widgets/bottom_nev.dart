@@ -1,3 +1,4 @@
+import 'package:crud_application/screens/add_product.dart';
 import 'package:crud_application/screens/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -34,10 +35,15 @@ class _BottomNevigationState extends State<BottomNevigation> {
             size: 24,
             color: Colors.white,
           ),
-          Icon(
-            Icons.qr_code_scanner_outlined,
-            size: 24,
-            color: Colors.white,
+          InkWell(
+            onTap: (){
+              Get.to(AddProduct());
+            },
+            child: Icon(
+              Icons.qr_code_scanner_outlined,
+              size: 24,
+              color: Colors.white,
+            ),
           ),
           InkWell(
             onTap: (){

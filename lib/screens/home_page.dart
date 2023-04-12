@@ -22,16 +22,12 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.white,
           centerTitle: true,
           title: const Text("Dashboard",style: TextStyle(color: Colors.black,fontSize: 20),),
-          leading: InkWell(
-            onTap: (){
-            },
-            child: Container(
-              margin: EdgeInsets.only(left: 20),
-              child: Icon(
-                Icons.menu_outlined,
-                size: 24,
-                color: Colors.black,
-              ),
+          leading: Container(
+            margin: EdgeInsets.only(left: 20),
+            child: Icon(
+              Icons.menu_outlined,
+              size: 24,
+              color: Colors.black,
             ),
           ),
           actions: [

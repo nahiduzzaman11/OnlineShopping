@@ -1,10 +1,10 @@
 import 'dart:io';
-
 import 'package:crud_application/controller/mycontroller.dart';
 import 'package:crud_application/widgets/bottom_nev.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+
 
 class ProfilePage extends StatefulWidget {
    ProfilePage({Key? key}) : super(key: key);
@@ -71,67 +71,76 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ],
       ),
-      body: Container(
-        width: double.infinity,
-        margin: EdgeInsets.symmetric(horizontal: width * 0.03,vertical: height * 0.02),
-        child: Column(
-          children: [
-            InkWell(
-              onTap: () {
-                picChange();
-                },
-              child: CircleAvatar(
-                radius: 50.0,
-                child: ClipOval(
-                  child: image != null
-                      ? Image.file(image!,height :height * 0.5, width: width * 0.5, fit: BoxFit.fill,)
-                      : Image.asset('assats/images/pro1.png',height: 100,width: 100,fit: BoxFit.fill,),
+      body: SingleChildScrollView(
+        child: Container(
+          width: double.infinity,
+          margin: EdgeInsets.symmetric(horizontal: width * 0.03,vertical: height * 0.02),
+          child: Column(
+            children: [
+              InkWell(
+                onTap: () {
+                  picChange();
+                  },
+                child: CircleAvatar(
+                  radius: 50.0,
+                  child: Container(
+                    height: height * 0.5,width: width * 0.5,
+                    decoration: BoxDecoration(
+                      color: Colors.blueGrey[300],
+                      borderRadius: BorderRadius.circular(50)
+                    ),
+                    child: ClipOval(
+                      child: image != null
+                          ? Image.file(image!,height :height * 0.5, width: width * 0.5, fit: BoxFit.fill,)
+                          : Icon(Icons.add_photo_alternate_outlined,color: Colors.black,size: 30,),
+                    ),
+                  ),
+                  backgroundColor: Colors.white,
                 ),
-                backgroundColor: Colors.white,
               ),
-            ),
-            SizedBox(height: height * 0.03,),
-            Card(
-              elevation: 5,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              child: ListTile(
-                title: Text("Administrator",style: TextStyle(color: Colors.black,fontSize: 14),),
-                leading: Icon(Icons.person_outline,color: Colors.blueAccent,),
-                trailing: Icon(Icons.edit_outlined,color: Colors.black,),
+              SizedBox(height: height * 0.03,),
+              Card(
+                elevation: 5,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                child: ListTile(
+                  title: Text("Administrator",style: TextStyle(color: Colors.black,fontSize: 14),),
+                  leading: Icon(Icons.person_outline,color: Colors.blueAccent,),
+                  trailing: Icon(Icons.edit_outlined,color: Colors.black,),
+                ),
               ),
-            ),
-            SizedBox(height: height * 0.01,),
-            Card(
-              elevation: 5,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              child: ListTile(
-                title: Text("admin@localhost.com",style: TextStyle(color: Colors.black,fontSize: 14),),
-                leading: Icon(Icons.email_outlined,color: Colors.redAccent,),
-                trailing: Icon(Icons.edit_outlined,color: Colors.black,),
+              SizedBox(height: height * 0.01,),
+              Card(
+                elevation: 5,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                child: ListTile(
+                  title: Text("admin@localhost.com",style: TextStyle(color: Colors.black,fontSize: 14),),
+                  leading: Icon(Icons.email_outlined,color: Colors.redAccent,),
+                  trailing: Icon(Icons.edit_outlined,color: Colors.black,),
+                ),
               ),
-            ),
-            SizedBox(height: height * 0.01,),
-            Card(
-              elevation: 5,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              child: ListTile(
-                title: Text("+8801795888218",style: TextStyle(color: Colors.black,fontSize: 14),),
-                leading: Icon(Icons.phone_outlined,color: Colors.green[600],),
-                trailing: Icon(Icons.edit_outlined,color: Colors.black,),
+              SizedBox(height: height * 0.01,),
+              Card(
+                elevation: 5,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                child: ListTile(
+                  title: Text("+8801795888218",style: TextStyle(color: Colors.black,fontSize: 14),),
+                  leading: Icon(Icons.phone_outlined,color: Colors.green[600],),
+                  trailing: Icon(Icons.edit_outlined,color: Colors.black,),
+                ),
               ),
-            ),
-            SizedBox(height: height * 0.01,),
-            Card(
-              elevation: 5,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-              child: ListTile(
-                title: Text("Address",style: TextStyle(color: Colors.black,fontSize: 14),),
-                leading: Icon(Icons.location_on,color: Colors.redAccent,),
-                trailing: Icon(Icons.edit_outlined,color: Colors.black,),
+              SizedBox(height: height * 0.01,),
+              Card(
+                elevation: 5,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                child: ListTile(
+                  title: Text("Address",style: TextStyle(color: Colors.black,fontSize: 14),),
+                  leading: Icon(Icons.location_on,color: Colors.redAccent,),
+                  trailing: Icon(Icons.edit_outlined,color: Colors.black,),
+                ),
               ),
-            ),
 
-          ],
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomNevigation(),
